@@ -60,6 +60,7 @@ header {
   gap: 16px;
   padding: 16px 0 24px;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .menu-icon {
@@ -401,29 +402,27 @@ footer {
     padding: 24px 24px 28px;
   }
 
-  .hamburger {
-    display: flex;
+  .brand img {
+    width: min(300px, 100%);
   }
 
-  header {
-    flex-wrap: wrap;
-  }
-
-  nav {
-    top: 56px;
+  .top-menu {
+    top: 66px;
     right: 0;
     left: auto;
     width: min(220px, calc(100vw - 24px));
-    transform: translateY(-8px);
   }
 
-  nav.active {
-    transform: translateY(0);
+  .section-grid,
+  .payment-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 760px) {
-  .section-grid {
+  .section-grid,
+  .order-form,
+  .payment-grid {
     grid-template-columns: 1fr;
   }
 
@@ -431,8 +430,12 @@ footer {
     max-height: 260px;
   }
 
-  .order-form {
-    grid-template-columns: 1fr;
+  .hero-image {
+    margin-top: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
   }
 
   button {
@@ -445,8 +448,17 @@ footer {
     padding: 16px;
   }
 
-  .brand {
-    font-size: 1.1rem;
+  header {
+    padding-top: 12px;
+  }
+
+  .brand img {
+    width: min(240px, 100%);
+  }
+
+  .menu-icon {
+    width: 42px;
+    height: 42px;
   }
 
   .hero-content {
@@ -455,5 +467,9 @@ footer {
 
   .card {
     padding: 18px;
+  }
+
+  .top-menu {
+    min-width: 170px;
   }
 }
