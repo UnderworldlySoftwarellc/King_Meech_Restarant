@@ -1,9 +1,9 @@
 :root {
-  --bg: #0f0b08;
-  --card: #221611;
-  --text: #f8efe9;
-  --muted: #d7b89c;
-  --accent: #c77f2d;
+  --bg: #000000;
+  --card: #111111;
+  --text: #f5f5f5;
+  --muted: #bdbdbd;
+  --accent: #ffffff;
 }
 
 * { box-sizing: border-box; }
@@ -11,7 +11,7 @@ body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   color: var(--text);
-  background: linear-gradient(135deg, var(--bg), #1e140f);
+  background: linear-gradient(135deg, #000000, #1a1a1a);
   line-height: 1.6;
 }
 
@@ -20,6 +20,38 @@ body {
   margin: 0 auto;
   padding: 24px;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
 
 header {
   display: flex;
@@ -30,16 +62,98 @@ header {
   position: relative;
 }
 
-.brand {
-  font-size: 1.4rem;
+.menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffffff, #d9d9d9);
+  color: #000000;
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 8px 20px rgba(255,255,255,0.18);
+}
+
+.top-menu {
+  position: absolute;
+  top: 72px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  padding: 8px 0;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #111111, #000000);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  z-index: 15;
+}
+
+.top-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.top-menu a {
+  padding: 14px 16px;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.top-menu a:last-child {
+  border-bottom: none;
+}
+
+.top-menu a:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
   flex: 1;
 }
 
+.brand img {
+  display: block;
+  height: auto;
+  width: min(380px, 100%);
+  max-width: 380px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+}
+
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 6px;
   background: none;
@@ -47,7 +161,8 @@ header {
   padding: 8px;
   cursor: pointer;
   width: auto;
-  padding: 0;
+  margin-left: auto;
+  z-index: 20;
 }
 
 .hamburger span {
@@ -73,19 +188,50 @@ header {
 
 nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 18px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: min(220px, calc(100vw - 24px));
+  background: var(--card);
+  padding: 8px 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(12px);
+  pointer-events: none;
+  overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+}
+
+nav.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
 nav a {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
   color: var(--text);
   text-decoration: none;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
 nav a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
   opacity: 1;
+}
+
+nav a:last-child {
+  border-bottom: none;
 }
 
 .hero {
@@ -103,6 +249,17 @@ nav a:hover {
   object-position: center;
   background: #140d09;
   padding: 16px 0;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 24px auto 0;
+  border-radius: 18px;
+  object-fit: contain;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
@@ -172,7 +329,8 @@ nav a:hover {
   padding: 18px;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 14px;
-  background: rgba(199, 127, 45, 0.08);
+  background: rgba(255,255,255,0.05);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
 }
 
 .payment-card h3 {
@@ -212,17 +370,19 @@ button {
   grid-column: 1 / -1;
   justify-self: start;
   padding: 12px 18px;
-  border: none;
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 999px;
-  background: var(--accent);
-  color: #fff;
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  color: var(--text);
   font: inherit;
   font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 button:hover {
-  filter: brightness(1.1);
+  background: linear-gradient(135deg, #262626, #111111);
+  transform: translateY(-1px);
 }
 
 footer {
@@ -250,43 +410,15 @@ footer {
   }
 
   nav {
-    display: none;
-    position: absolute;
     top: 56px;
-    left: 0;
     right: 0;
-    background: var(--card);
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 8px 0;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    pointer-events: none;
+    left: auto;
+    width: min(220px, calc(100vw - 24px));
     transform: translateY(-8px);
-    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-    z-index: 10;
   }
 
   nav.active {
-    display: flex;
-    max-height: 320px;
-    opacity: 1;
-    pointer-events: auto;
     transform: translateY(0);
-  }
-
-  nav a {
-    display: block;
-    padding: 12px 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  nav a:last-child {
-    border-bottom: none;
   }
 }
 

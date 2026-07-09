@@ -9,20 +9,13 @@
   <body>
     <div class="page">
       <header>
-        <div class="brand">King Meech</div>
-        <button
-          class="hamburger"
-          id="hamburger-btn"
-          type="button"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-          aria-controls="nav-menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="brand">
+          <img src="img/logo.png" alt="King Meech Restaurant logo" />
+        </div>
+        <button class="menu-icon" id="menu-icon" type="button" aria-label="Toggle menu" aria-expanded="false">
+          ☰
         </button>
-        <nav id="nav-menu" aria-label="Primary navigation">
+        <nav class="top-menu" id="top-menu" aria-label="Top navigation">
           <a href="#about">About</a>
           <a href="#menu">Menu</a>
           <a href="#order">Order</a>
@@ -31,7 +24,7 @@
       </header>
 
       <section class="hero">
-        <img src="img/banner.png" alt="King Meech Restaurant banner" />
+        
         <div class="hero-content">
           <h1>Authentic Flavors, Warm Hospitality</h1>
           <p>
@@ -40,6 +33,7 @@
           </p>
         </div>
       </section>
+
 
       <div class="section-grid">
         <section class="card" id="about">
@@ -60,6 +54,9 @@
         </section>
       </div>
 
+      <div>
+        <img src="img/coming_soon.png" alt="A delicious meal served at King Meech Restaurant" class="hero-image" />
+      </div>
       <section class="card contact-card" id="order">
         <h2>Place Your Order</h2>
         <p>Choose your favorites and we’ll prepare them fresh for pickup.</p>
@@ -153,21 +150,21 @@
     </div>
 
     <script>
-      const hamburgerBtn = document.getElementById('hamburger-btn');
-      const navMenu = document.getElementById('nav-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const topMenu = document.getElementById('top-menu');
 
-      if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-          const isOpen = navMenu.classList.toggle('active');
-          hamburgerBtn.classList.toggle('active', isOpen);
-          hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+      if (menuIcon && topMenu) {
+        menuIcon.addEventListener('click', () => {
+          const isOpen = topMenu.classList.toggle('active');
+          menuIcon.classList.toggle('active', isOpen);
+          menuIcon.setAttribute('aria-expanded', String(isOpen));
         });
 
-        navMenu.querySelectorAll('a').forEach(link => {
+        topMenu.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburgerBtn.classList.remove('active');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            topMenu.classList.remove('active');
+            menuIcon.classList.remove('active');
+            menuIcon.setAttribute('aria-expanded', 'false');
           });
         });
       }
