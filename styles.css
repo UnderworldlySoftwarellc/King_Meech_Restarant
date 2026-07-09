@@ -53,6 +53,29 @@ body {
 }
 
 
+.auth-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.auth-btn {
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  background: transparent;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-btn.secondary {
+  background: transparent;
+  color: var(--text);
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -254,13 +277,70 @@ nav a:last-child {
 
 .hero-image {
   display: block;
-  width: 100%;
-  max-width: 900px;
+  width: min(100%, 560px);
   height: auto;
-  margin: 24px auto 0;
-  border-radius: 18px;
+  margin: 20px auto 0;
+  border-radius: 16px;
   object-fit: contain;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.click-card-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0 0;
+}
+
+.click-card {
+  display: block;
+  position: relative;
+  padding: 20px 24px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.click-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.click-card:nth-child(2)::before,
+.click-card:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 46%, rgba(255,255,255,0.82) 46%, rgba(255,255,255,0.82) 54%, transparent 54%);
+  pointer-events: none;
+}
+
+.click-card:nth-child(2) h3,
+.click-card:nth-child(2) p,
+.click-card:nth-child(3) h3,
+.click-card:nth-child(3) p {
+  position: relative;
+  z-index: 1;
+}
+
+.click-card-section {
+  padding: 0;
+  min-height: 100%;
+}
+
+.click-card h3 {
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+
+.click-card p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .hero-content {
@@ -422,7 +502,8 @@ footer {
 @media (max-width: 760px) {
   .section-grid,
   .order-form,
-  .payment-grid {
+  .payment-grid,
+  .click-card-list {
     grid-template-columns: 1fr;
   }
 
@@ -432,10 +513,22 @@ footer {
 
   .hero-image {
     margin-top: 18px;
+    max-width: 100%;
   }
 
   .hero-content h1 {
     font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .click-card-section {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 12px 0 0;
+  }
+
+  .click-card-section:first-child {
+    border-top: none;
+    padding-top: 0;
   }
 
   button {
