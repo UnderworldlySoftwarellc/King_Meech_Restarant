@@ -27,6 +27,7 @@ header {
   align-items: center;
   gap: 16px;
   padding: 16px 0 24px;
+  position: relative;
 }
 
 .brand {
@@ -34,6 +35,40 @@ header {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  flex: 1;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  width: auto;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(10px, -10px);
 }
 
 nav {
@@ -46,6 +81,11 @@ nav a {
   color: var(--text);
   text-decoration: none;
   opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 1;
 }
 
 .hero {
@@ -200,14 +240,43 @@ footer {
   .hero-content {
     padding: 24px 24px 28px;
   }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--card);
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav.active {
+    max-height: 300px;
+  }
+
+  nav a {
+    display: block;
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
 }
 
 @media (max-width: 760px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .section-grid {
     grid-template-columns: 1fr;
   }
