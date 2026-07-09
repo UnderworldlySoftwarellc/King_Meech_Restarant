@@ -9,13 +9,20 @@
   <body>
     <div class="page">
       <header>
-        <div class="brand">King Meech Creative Restaurant</div>
-        <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+        <div class="brand">King Meech</div>
+        <button
+          class="hamburger"
+          id="hamburger-btn"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <nav id="nav-menu">
+        <nav id="nav-menu" aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#menu">Menu</a>
           <a href="#order">Order</a>
@@ -149,18 +156,21 @@
       const hamburgerBtn = document.getElementById('hamburger-btn');
       const navMenu = document.getElementById('nav-menu');
 
-      hamburgerBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburgerBtn.classList.toggle('active');
-      });
-
-      // Close menu when a link is clicked
-      navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          hamburgerBtn.classList.remove('active');
+      if (hamburgerBtn && navMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+          const isOpen = navMenu.classList.toggle('active');
+          hamburgerBtn.classList.toggle('active', isOpen);
+          hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
         });
-      });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
     </script>
   </body>
 </html>
