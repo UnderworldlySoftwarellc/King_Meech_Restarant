@@ -328,6 +328,18 @@ nav a:last-child {
   z-index: 1;
 }
 
+.cheesecake-page .click-card:nth-child(2)::before,
+.cheesecake-page .click-card:nth-child(3)::before {
+  content: none;
+}
+
+.cheesecake-page .click-card:nth-child(2) h3,
+.cheesecake-page .click-card:nth-child(2) p,
+.cheesecake-page .click-card:nth-child(3) h3,
+.cheesecake-page .click-card:nth-child(3) p {
+  z-index: auto;
+}
+
 .click-card-section {
   padding: 0;
   min-height: 100%;
