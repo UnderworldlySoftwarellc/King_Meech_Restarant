@@ -328,8 +328,8 @@ nav a:last-child {
   z-index: 1;
 }
 
-body:not(.cheesecake-page) .click-card:nth-child(2)::after,
-body:not(.cheesecake-page) .click-card:nth-child(3)::after {
+body:not(.cheesecake-page):not(.frozen-whole-foods-page) .click-card:nth-child(2)::after,
+body:not(.cheesecake-page):not(.frozen-whole-foods-page) .click-card:nth-child(3)::after {
   content: "COMING SOON";
   position: absolute;
   top: 50%;
