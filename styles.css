@@ -328,6 +328,22 @@ nav a:last-child {
   z-index: 1;
 }
 
+body:not(.cheesecake-page) .click-card:nth-child(2)::after,
+body:not(.cheesecake-page) .click-card:nth-child(3)::after {
+  content: "COMING SOON";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  color: #000000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .cheesecake-page .click-card:nth-child(2)::before,
 .cheesecake-page .click-card:nth-child(3)::before {
   content: none;
