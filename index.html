@@ -92,6 +92,7 @@
 
       <section class="card contact-card" id="order">
         <h2>Place Your Order</h2>
+        <p>Please call us at (557) 223-2991 to place your order.</p>
       <!--  <p>Choose your favorites and we’ll prepare them fresh for pickup.</p>
         <form class="order-form">
           <div class="form-row">
@@ -182,25 +183,6 @@
       </footer>
     </div>
 
-    <script>
-      const menuIcon = document.getElementById('menu-icon');
-      const topMenu = document.getElementById('top-menu');
-
-      if (menuIcon && topMenu) {
-        menuIcon.addEventListener('click', () => {
-          const isOpen = topMenu.classList.toggle('active');
-          menuIcon.classList.toggle('active', isOpen);
-          menuIcon.setAttribute('aria-expanded', String(isOpen));
-        });
-
-        topMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            topMenu.classList.remove('active');
-            menuIcon.classList.remove('active');
-            menuIcon.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-    </script>
+    <script src="javascript.js"></script>
   </body>
 </html>
