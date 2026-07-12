@@ -349,6 +349,11 @@ body:not(.cheesecake-page):not(.frozen-whole-foods-page) .click-card:nth-child(3
   content: none;
 }
 
+.frozen-whole-foods-page .click-card:nth-child(2)::before,
+.frozen-whole-foods-page .click-card:nth-child(3)::before {
+  content: none;
+}
+
 .cheesecake-page .click-card:nth-child(2) h3,
 .cheesecake-page .click-card:nth-child(2) p,
 .cheesecake-page .click-card:nth-child(3) h3,
