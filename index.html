@@ -6,171 +6,141 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>King Meech Restaurant</title>
-    <link rel="stylesheet" href="styles.css?v=20260709" />
+    <meta
+      name="description"
+      content="King Meech Creative Restaurant: fine dining, gourmet cheesecakes, and frozen whole foods with custom orders and delivery."
+    />
+    <title>King Meech Creative Restaurant</title>
+    <link rel="stylesheet" href="styles.css?v=20260714" />
   </head>
-  <body>
+  <body class="home-page">
     <div class="page">
       <div class="auth-bar">
-        <button class="auth-btn" type="button">Login</button>
-        <button class="auth-btn secondary" type="button">Sign Out</button>
+        <span class="eyebrow">Grand opening August 4th, 2026</span>
+        <a class="auth-btn secondary" href="tel:+15572232991">Call (557) 223-2991</a>
       </div>
 
       <header>
         <div class="brand">
-          <img src="img/logo.png" alt="King Meech Restaurant logo" />
+          <img src="img/logo.png" alt="King Meech Creative Restaurant logo" />
         </div>
         <button class="menu-icon" id="menu-icon" type="button" aria-label="Toggle menu" aria-expanded="false">
           ☰
         </button>
         <nav class="top-menu" id="top-menu" aria-label="Top navigation">
-          <a href="#about">Specialities</a>
-          <a href="#menu">Nationalities</a>
-          <a href="#order">Weekly Specials</a>
+          <a href="#hero">Home</a>
+          <a href="#experience">Experience</a>
           <a href="cheesecakes.html">Cheesecakes</a>
-          <a href="#contact">Order Online</a>
+          <a href="frozen_whole_foods.html">Frozen Whole Foods</a>
+          <a href="#contact">Order Now</a>
         </nav>
       </header>
 
-      <section class="hero">
-        
-        <div class="hero-content">
-          <h1>Authentic Flavors, Warm Hospitality</h1>
-          <p>
-            Welcome to King Meech Restaurant, where every dish is crafted with care and served with the comfort of home.
-            Stop in for a memorable meal, a relaxing evening, and flavors you will want to come back for.
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <p class="hero-kicker">You're invited to our</p>
+          <h1>Grand opening energy with a fine-dining soul.</h1>
+          <p class="hero-text">
+            King Meech Creative Restaurant brings together gourmet cheesecakes, frozen whole foods, and custom
+            comfort meals with a luxury presentation and a neighborhood feel.
           </p>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="#contact">Order Now</a>
+            <a class="secondary-button" href="cheesecakes.html">View Cheesecakes</a>
+          </div>
+
+          <div class="hero-badges">
+            <span>Fine Dining</span>
+            <span>Hot Food</span>
+            <span>Gourmet Cheesecakes</span>
+            <span>Frozen Whole Foods</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="img/banner.png" alt="King Meech Creative Restaurant promotional banner" />
+          <div class="hero-note">
+            <span>Now accepting orders</span>
+            <strong>Two weeks in advance for big orders</strong>
+          </div>
         </div>
       </section>
 
-
-      <div class="section-grid">
-        <section class="card" id="about">
-          <h2>About Us</h2>
-          <p>
-            We bring together fresh ingredients, bold seasoning, and a welcoming atmosphere to create a dining experience that feels both special and familiar.
-          </p>
-        </section>
-
-        <section class="card" id="menu">
-          <h2>Featured Menu</h2>
-          <ul class="menu-list">
-            <li>Signature grilled specialties</li>
-            <li>Fresh soups and salads</li>
-            <li>House-made sides and desserts</li>
-            <li>Refreshing drinks and daily specials</li>
-          </ul>
-        </section>
-      </div>
-
-      
-
-      <div class="click-card-list">
-        <a href="frozen_whole_foods.html" class="click-card">
-          <div class="click-card-section">
-            <h3>Frozen Whole Food</h3>
-            <p>Browse the latest comfort classics and chef favorites.</p>
-          </div>
-        </a>
-
-        <a href="#order" class="click-card">
-          <div class="click-card-section">
-            <h3>Fast Food</h3>
-            <p>See what’s featured today and enjoy a rotating selection.</p>
-          </div>
-        </a>
-
-        <a href="#order" class="click-card">
-          <div class="click-card-section">
-            <h3>Fine Dinning</h3>
-            <p>Place your order and let us prepare it fresh for you.</p>
-          </div>
-        </a>
-      </div>
-
-      <section class="card contact-card" id="order">
-        <h2>Place Your Order</h2>
-        <p>Please call us at (557) 223-2991 to place your order.</p>
-      <!--  <p>Choose your favorites and we’ll prepare them fresh for pickup.</p>
-        <form class="order-form">
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-          </div>
-
-          <div class="form-row">
-          <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 010-2024" required />
-          </div>
-
-          <div class="form-row">
-            <label for="dish">Dish</label>
-            <select id="dish" name="dish" required>
-              <option value="">Select a dish</option>
-              <option value="grilled-special">Signature Grilled Special</option>
-              <option value="soup-salad">Soup &amp; Salad Combo</option>
-              <option value="dessert-platter">Dessert Platter</option>
-              <option value="daily-special">Daily Special</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <label for="quantity">Quantity</label>
-            <input type="number" id="quantity" name="quantity" min="1" value="1" />
-          </div>
-
-          <div class="form-row full-width">
-            <label for="notes">Special Notes</label>
-            <textarea id="notes" name="notes" rows="4" placeholder="Any special requests?"></textarea>
-          </div>
-
-          <div class="form-row full-width payment-card">
-            <h3>Payment Details</h3>
-            <div class="payment-grid">
-              <div class="form-row">
-                <label for="payment-method">Payment Method</label>
-                <select id="payment-method" name="payment-method" required>
-                  <option value="">Choose payment method</option>
-                  <option value="card">Credit / Debit Card</option>
-                  <option value="cash">Cash on Pickup</option>
-                </select>
-              </div>
-
-              <div class="form-row">
-                <label for="card-name">Cardholder Name</label>
-                <input type="text" id="card-name" name="card-name" placeholder="Name on card" />
-              </div>
-
-              <div class="form-row">
-                <label for="card-number">Card Number</label>
-                <input type="text" id="card-number" name="card-number" inputmode="numeric" placeholder="1234 5678 9012 3456" />
-              </div>
-
-              <div class="form-row">
-                <label for="expiry">Expiry Date</label>
-                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" />
-              </div>
-
-              <div class="form-row">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" inputmode="numeric" placeholder="123" />
-              </div>
-
-              <div class="form-row">
-                <label for="zip">Billing ZIP</label>
-                <input type="text" id="zip" name="zip" placeholder="00000" />
-              </div>
-            </div>
-          </div>
-        
-          <button type="submit">Submit Order &amp; Pay</button>
-        </form>-->
+      <section class="announcement-bar">
+        <div>
+          <span class="announcement-label">Opening date</span>
+          <strong>August 4th, 2026</strong>
+        </div>
+        <div>
+          <span class="announcement-label">Order window</span>
+          <strong>Two weeks ahead for big orders</strong>
+        </div>
+        <div>
+          <span class="announcement-label">Service area</span>
+          <strong>Cleveland area delivery now</strong>
+        </div>
       </section>
 
-      
+      <section class="experience-grid" id="experience">
+        <article class="experience-card feature-card">
+          <span class="card-label">Signature dessert</span>
+          <h2>Gourmet cheesecakes</h2>
+          <p>Blueberry whip, pineapple upside down, brown sugar banana, strawberry caramel, Fruity Pebbles, and more.</p>
+          <a href="cheesecakes.html">Browse cheesecake menu</a>
+        </article>
+
+        <article class="experience-card feature-card">
+          <span class="card-label">Comfort classics</span>
+          <h2>Frozen whole foods</h2>
+          <p>Order make-ahead meals, snacks, and family favorites for baking, frying, grilling, or reheating at home.</p>
+          <a href="frozen_whole_foods.html">See frozen whole foods</a>
+        </article>
+
+        <article class="experience-card feature-card highlight-card">
+          <span class="card-label">Custom service</span>
+          <h2>Delivery, shipping, and walk-in options</h2>
+          <p>Customers can choose what works best for them, with local delivery now and national delivery coming soon.</p>
+          <a href="#contact">Start an order</a>
+        </article>
+      </section>
+
+      <section class="split-section">
+        <div class="split-copy">
+          <p class="section-kicker">Made fresh with love</p>
+          <h2>Designed for big orders, celebrations, and everyday comfort.</h2>
+          <p>
+            Whether you are planning ahead for an event or want something indulgent for dinner tonight, King Meech
+            Creative Restaurant is built around bold flavor, premium presentation, and easy ordering.
+          </p>
+
+          <div class="split-points">
+            <span>Currently delivering in the Cleveland area only</span>
+            <span>Additional charge for infusion</span>
+            <span>Vegan-friendly options</span>
+            <span>Accepting SNAP/EBT soon</span>
+          </div>
+        </div>
+
+        <div class="split-art">
+          <div class="contact-tile" id="contact">
+            <p class="section-kicker">Connect with us</p>
+            <h2>(557) 223-2991</h2>
+            <p>Call or text to place an order and ask about cheesecakes, frozen foods, or bulk catering-style requests.</p>
+            <a class="primary-button" href="tel:+15572232991">Call now</a>
+          </div>
+
+          <div class="contact-tile secondary-tile">
+            <p class="section-kicker">Website</p>
+            <h2>kingmeechcreativerestaurant.com</h2>
+            <p>Browse the menu, check the latest offerings, and see what is available for pick up or delivery.</p>
+            <a class="secondary-button" href="https://kingmeechcreativerestaurant.com" target="_blank" rel="noreferrer">Visit site</a>
+          </div>
+        </div>
+      </section>
 
       <footer>
-        <p>King Meech Restaurant © 2026</p>
+        <p>Great food. Great experience. Greater purpose.</p>
       </footer>
     </div>
 
