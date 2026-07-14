@@ -158,6 +158,44 @@ header {
   letter-spacing: 0.03em;
 }
 
+.nav-dropdown {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(243, 194, 71, 0.12);
+}
+
+.nav-dropdown-toggle {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-dropdown.active .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  padding-left: 28px;
+}
+
 .top-menu a:last-child {
   border-bottom: none;
 }
