@@ -413,6 +413,28 @@ header {
   background: linear-gradient(180deg, rgba(12, 12, 12, 0.98), rgba(4, 4, 4, 0.96));
 }
 
+.click-card-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.click-card-list > article.click-card {
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(243, 194, 71, 0.14);
+  background: var(--card);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+}
+
+.click-card-section h3 {
+  margin: 0;
+}
+
+.click-card-section p {
+  margin: 10px 0 0;
+}
+
 footer {
   text-align: center;
   padding: 28px 0 10px;
@@ -435,6 +457,10 @@ footer {
   }
 
   .split-art {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .click-card-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -477,6 +503,10 @@ footer {
   .hero-note {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .click-card-list {
+    grid-template-columns: 1fr;
   }
 
   .experience-grid {
